@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_ewabootcamp/screens/category_screen.dart';
+import 'package:quiz_app_ewabootcamp/screens/login_screen.dart';
+import 'package:quiz_app_ewabootcamp/screens/question_screen.dart';
+import 'package:quiz_app_ewabootcamp/screens/score_screen.dart';
 import 'package:quiz_app_ewabootcamp/screens/splash_screen.dart';
 
 void main() {

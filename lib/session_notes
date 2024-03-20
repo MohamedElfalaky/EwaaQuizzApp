@@ -46,3 +46,22 @@ set state finction :
 
 
 - Responsive design: is to make a design that is fit with all screen sizes
+
+- navigation: is to navigate between screen in flutter app
+
+1- push
+
+
+
+/////////////////////
+
+form validation
+1- wrap for my textfields and button with ***FORM** widget
+2- give the form a key
+
+
+///////////////////
+Data structure 
+1- array/List : data structure type that helps us to put things next to each other.
+2- Map
+

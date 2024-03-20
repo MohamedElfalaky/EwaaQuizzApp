@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:quiz_app_ewabootcamp/screens/login_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -42,8 +43,15 @@ class SplashScreen extends StatelessWidget {
               child: ElevatedButton(
                   // style:
                   //     ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-                  onPressed: () {},
-                  child: Text("إبدأ اللعبة")))
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => LoginScreen(),
+                      ),
+                    );
+                  },
+                  child: Text("go to login screen")))
         ],
       ),
     ));
