@@ -12,6 +12,7 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   int _currentIndex = 0;
+  int _currentScore = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -60,24 +61,33 @@ class _QuestionScreenState extends State<QuestionScreen> {
                   i++)
                 ElevatedButton(
                     onPressed: () {
+                      _currentScore = _currentScore +
+                          (widget.questionsAndAnswersList![_currentIndex]
+                              ["answers"][i]["score"]) as int;
+
                       if ((_currentIndex + 1) <
                           widget.questionsAndAnswersList!.length) {
                         setState(() {
                           // _currentIndex = _currentIndex + 1;
+
+                          print("current score is ${_currentScore}");
+
                           _currentIndex++;
                         });
                       } else {
                         Navigator.push(
                           context,
                           MaterialPageRoute<void>(
-                            builder: (BuildContext context) =>
-                                const ScoreScreen(),
+                            builder: (BuildContext context) => ScoreScreen(
+                                score: _currentScore,
+                                numberOfQuestions:
+                                    widget.questionsAndAnswersList!.length),
                           ),
                         );
                       }
                     },
                     child: Text(widget.questionsAndAnswersList![_currentIndex]
-                        ["answers"][i])),
+                        ["answers"][i]["ans"])),
             ],
           ),
         ),

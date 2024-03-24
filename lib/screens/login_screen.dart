@@ -112,12 +112,19 @@ class LoginScreen extends StatelessWidget {
                           child: ElevatedButton(
                               onPressed: () {
                                 if (_formKey.currentState!.validate()) {
-                                  Navigator.push(
+                                  // Navigator.push(
+                                  //   context,
+                                  //   MaterialPageRoute<void>(
+                                  //     builder: (BuildContext context) =>
+                                  //         const CategoryScreen(),
+                                  //   ),
+                                  // );
+                                  Navigator.pushAndRemoveUntil<void>(
                                     context,
                                     MaterialPageRoute<void>(
-                                      builder: (BuildContext context) =>
-                                          const CategoryScreen(),
-                                    ),
+                                        builder: (BuildContext context) =>
+                                            const CategoryScreen()),
+                                    (route) => false,
                                   );
                                 }
                               },

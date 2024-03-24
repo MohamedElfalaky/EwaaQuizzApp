@@ -3,7 +3,10 @@ import 'package:quiz_app_ewabootcamp/screens/splash_screen.dart';
 import 'package:quiz_app_ewabootcamp/utils/global_variable.dart';
 
 class ScoreScreen extends StatelessWidget {
-  const ScoreScreen({super.key});
+  final score;
+  final numberOfQuestions;
+  const ScoreScreen(
+      {super.key, required this.score, required this.numberOfQuestions});
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +30,8 @@ class ScoreScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold)),
               const TextSpan(
                   text: "  you have completed the quiz and your score is"),
-              const TextSpan(
-                  text: " 8/10",
+              TextSpan(
+                  text: " $score/$numberOfQuestions",
                   style: TextStyle(fontSize: 25, color: Colors.red)),
             ])),
             const SizedBox(
